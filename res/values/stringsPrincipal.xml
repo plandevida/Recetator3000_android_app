@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+<!-- Pantalla principal -->
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Recetator3000</string>
+    <string name="mi_perfil">Mi perfil</string>
+    <string name="recetas">Recetas</string>
+    <string name="buscar_recetas">Buscar recetas</string>
+</resources>

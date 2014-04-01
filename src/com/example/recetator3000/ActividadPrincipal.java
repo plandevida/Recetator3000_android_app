@@ -1,8 +1,8 @@
 package com.example.recetator3000;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
@@ -30,6 +30,8 @@ public class ActividadPrincipal extends Activity {
 	}
 	
 	public void buscar(View view) {
+		Intent intent = new Intent(this, ActividadBusquedaRecetas.class);
+		startActivity(intent);
 	}
 
 }

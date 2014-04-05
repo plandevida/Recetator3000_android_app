@@ -5,6 +5,9 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="letra_boton_principal">30sp</dimen>
     <dimen name="letra_boton_recetas">26sp</dimen>
+    <dimen name="letra_nueva_receta">18sp</dimen>
+    
     <dimen name="margin_menu">20dp</dimen>
+    <dimen name="margin_nuevareceta">20dp</dimen>
 
 </resources>

@@ -30,6 +30,14 @@
             android:name="com.example.recetator3000.ActividadNuevaReceta"
             android:label="@string/title_activity_actividad_nueva_receta" >
         </activity>
+        <activity
+            android:name="com.example.recetator3000.ActividadBusquedaRecetas"
+            android:label="@string/title_activity_actividad_busqueda_recetas"
+            android:parentActivityName="com.example.recetator3000.ActividadPrincipal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recetator3000.ActividadPrincipal" />
+        </activity>
     </application>
 
 </manifest>

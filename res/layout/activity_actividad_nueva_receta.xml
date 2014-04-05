@@ -204,7 +204,7 @@
                 android:layout_toLeftOf="@+id/button1"
                 android:layout_marginRight="@dimen/margin_menu"
                 android:background="@drawable/style_button"
-                android:text="guardar"
+                android:text="@string/guardar"
                 android:textSize="@dimen/letra_nueva_receta" />
 
             <Button
@@ -222,7 +222,7 @@
                 android:layout_toRightOf="@+id/button1"
                 android:layout_marginLeft="@dimen/margin_menu"
                 android:background="@drawable/style_button"
-                android:text="cancelar"
+                android:text="@string/cancelar"
                 android:textSize="@dimen/letra_nueva_receta" />
         
         </RelativeLayout>

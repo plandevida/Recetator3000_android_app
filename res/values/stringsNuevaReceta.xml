@@ -3,7 +3,7 @@
     
 <!-- Pantalla nueva receta -->
     <string name="title_activity_actividad_nueva_receta">Nueva Receta</string>
-    <string name="nombre_receta">Nombre de la Receta</string>
+    <string name="nombre_receta">Nombre de la receta</string>
     <string name="tipo_plato">Tipo de plato</string>
     <string name="ingrediente">Ingrediente principal</string>
     <string name="dificultad">Dificultad</string>
@@ -11,8 +11,8 @@
     <string name="calorias">Valor calórico</string>
     <string name="celiacos">Apto para celíacos</string>
     <string name="lactosa">Apto para alérgicos a la lactosa</string>
-    <string name="ingredientes">Ingredientes:</string>
-    <string name="modo">Modo de elaboración:</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="modo">Modo de elaboración</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
 </resources>

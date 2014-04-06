@@ -7,4 +7,7 @@
     <string name="mi_perfil">Mi perfil</string>
     <string name="recetas">Recetas</string>
     <string name="buscar_recetas">Buscar recetas</string>
+    
+    <!-- Para contentDescription de ImageViews -->
+    <string name="descripcion">Imagen</string>
 </resources>

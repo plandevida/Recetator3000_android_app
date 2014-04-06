@@ -23,12 +23,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.recetator3000.ActividadRecetas"
-            android:label="@string/title_activity_actividad_recetas" >
+            android:name="com.example.recetator3000.ActividadMiPerfil"
+            android:label="@string/title_activity_actividad_mi_perfil"
+            android:parentActivityName="com.example.recetator3000.ActividadPrincipal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recetator3000.ActividadPrincipal" />
         </activity>
         <activity
-            android:name="com.example.recetator3000.ActividadNuevaReceta"
-            android:label="@string/title_activity_actividad_nueva_receta" >
+            android:name="com.example.recetator3000.ActividadRecetas"
+            android:label="@string/title_activity_actividad_recetas"
+            android:parentActivityName="com.example.recetator3000.ActividadPrincipal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recetator3000.ActividadPrincipal" />
         </activity>
         <activity
             android:name="com.example.recetator3000.ActividadBusquedaRecetas"
@@ -37,6 +45,18 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.recetator3000.ActividadPrincipal" />
+        </activity>
+        <activity
+            android:name="com.example.recetator3000.ActividadNuevaReceta"
+            android:label="@string/title_activity_actividad_nueva_receta"
+            android:parentActivityName="com.example.recetator3000.ActividadRecetas" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recetator3000.ActividadRecetas" />
+        </activity>
+        <activity
+            android:name="com.example.recetator3000.ActividadMostrarReceta"
+            android:label="@string/title_activity_actividad_mostrar_receta" >
         </activity>
     </application>
 

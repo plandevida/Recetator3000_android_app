@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/style_button"
         android:textColor="@color/blanco"
-        android:textSize="@dimen/letra_boton_recetas"
+        android:textSize="@dimen/letra_grande"
         android:text="@string/nueva_receta"
         android:onClick="nueva" />
 
@@ -26,10 +26,10 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/margin_grande"
         android:background="@drawable/style_button"
         android:textColor="@color/blanco"
-        android:textSize="@dimen/letra_boton_recetas"
+        android:textSize="@dimen/letra_grande"
         android:text="@string/mis_recetas"
         android:onClick="misRecetas" />
 
@@ -37,11 +37,11 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/margin_grande"
+        android:layout_marginTop="@dimen/margin_grande"
         android:background="@drawable/style_button"
         android:textColor="@color/blanco"
-        android:textSize="@dimen/letra_boton_recetas"
+        android:textSize="@dimen/letra_grande"
         android:text="@string/recetas_favoritas"
         android:onClick="favoritas" />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/style_button"
         android:textColor="@color/blanco"
-        android:textSize="@dimen/letra_boton_recetas"
+        android:textSize="@dimen/letra_grande"
         android:text="@string/recetas_pendientes"
         android:onClick="pendientes" />
     

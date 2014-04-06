@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_perfil"
+    tools:context=".ActividadMiPerfil" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_medio"
+        android:background="@color/gris_transp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/foto_perfil"
+                android:contentDescription="@string/descripcion"
+                android:layout_width="@dimen/foto_perfil"
+                android:layout_height="@dimen/foto_perfil"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/cocinero" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/foto_perfil"
+                android:layout_marginTop="@dimen/margin_grande"
+                android:text="@string/nombre"
+                android:textSize="@dimen/letra_peque" />
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView1"
+                android:layout_toRightOf="@+id/textView1"
+                android:layout_marginLeft="@dimen/margin_medio"
+                android:ems="10"
+                android:inputType="textCapWords"
+                android:textSize="@dimen/letra_peque" >
+            </EditText>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -22,6 +22,8 @@ public class ActividadPrincipal extends Activity {
 	}
 	
 	public void perfil(View view) {
+		Intent intent = new Intent(this, ActividadMiPerfil.class);
+		startActivity(intent);
 	}
 	
 	public void recetas(View view) {

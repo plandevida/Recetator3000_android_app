@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="title_activity_actividad_mostrar_receta">Receta</string>
+    <string name="valoracion">Valoración</string>
+    <string name="no_celiacos">No apto para celíacos</string>
+    <string name="no_lactosa">No apto para alérgicos a la lactosa</string>
+    <string name="modo_mostrar">Ingredientes / Modo de preparación</string>
+    <string name="video">Ver vídeo</string>
+    <string name="comentarios">Comentarios</string>
+
+</resources>

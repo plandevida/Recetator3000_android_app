@@ -1,0 +1,166 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/arroz"
+    tools:context=".ActividadMostrarReceta" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_medio"
+        android:background="@color/negro_transp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/titulo_mostrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/letra_mediana"
+                android:background="@drawable/style_button" />
+
+            <ImageView
+                android:id="@+id/imagen_receta"
+                android:contentDescription="@string/descripcion"
+                android:layout_width="@dimen/imagen_receta"
+                android:layout_height="@dimen/imagen_receta"
+                android:layout_below="@+id/titulo_mostrar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:background="@color/gris_oscuro" />
+
+            <RatingBar
+                android:id="@+id/ratingBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imagen_receta"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:numStars="5" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ratingBar1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:text="@string/dificultad"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/letra_peque" />
+
+            <TextView
+                android:id="@+id/dificultad_mostrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView1"
+                android:layout_toRightOf="@+id/textView1"
+                android:layout_marginLeft="@dimen/margin_medio"
+                android:textColor="@color/lila"
+                android:textSize="@dimen/letra_peque" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_alignLeft="@+id/textView1"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:text="@string/tiempo"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/letra_peque" />
+
+            <TextView
+                android:id="@+id/tiempo_mostrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView2"
+                android:layout_toRightOf="@+id/textView2"
+                android:layout_marginLeft="@dimen/margin_medio"
+                android:textColor="@color/lila"
+                android:textSize="@dimen/letra_peque" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:text="@string/calorias"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/letra_peque" />
+
+            <TextView
+                android:id="@+id/calorias_mostrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView3"
+                android:layout_toRightOf="@+id/textView3"
+                android:layout_marginLeft="@dimen/margin_medio"
+                android:textColor="@color/lila"
+                android:textSize="@dimen/letra_peque" />
+
+            <TextView
+                android:id="@+id/tipo_mostrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:textColor="@color/lila"
+                android:textSize="@dimen/letra_peque" />
+
+            <TextView
+                android:id="@+id/apto_mostrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tipo_mostrar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:textColor="@color/lila"
+                android:textSize="@dimen/letra_peque" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/apto_mostrar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:text="@string/modo_mostrar"
+                android:textColor="@color/lila"
+                android:textSize="@dimen/letra_peque" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:text="@string/video"
+                android:textColor="@color/lila"
+                android:textSize="@dimen/letra_peque" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/button2"
+                android:layout_alignParentRight="true"
+                android:text="@string/comentarios"
+                android:textColor="@color/lila"
+                android:textSize="@dimen/letra_peque" />
+            
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

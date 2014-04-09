@@ -21,11 +21,36 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/margin_medio"
                 android:textColor="@color/blanco"
                 android:textSize="@dimen/letra_mediana"
-                android:background="@drawable/style_button" />
+                android:background="@drawable/style_titulo_receta" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imagen_receta"
+                android:layout_toLeftOf="@+id/imagen_receta"
+                android:layout_marginRight="@dimen/margin_medio"
+                android:layout_marginTop="@dimen/margin_medio"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/like"
+                    android:layout_width="@dimen/margin_grande"
+                    android:layout_height="@dimen/margin_grande"
+                    android:layout_marginBottom="@dimen/margin_peque"
+                    android:background="@drawable/no_like"
+                    android:onClick="favorito" />
+
+                <Button
+                    android:id="@+id/pendiente"
+                    android:layout_width="@dimen/margin_grande"
+                    android:layout_height="@dimen/margin_grande"
+                    android:background="@drawable/no_calendar"
+                    android:onClick="pendiente" />
+
+            </LinearLayout>
+            
             <ImageView
                 android:id="@+id/imagen_receta"
                 android:contentDescription="@string/descripcion"
@@ -33,8 +58,48 @@
                 android:layout_height="@dimen/imagen_receta"
                 android:layout_below="@+id/titulo_mostrar"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/margin_medio"
+                android:layout_marginTop="@dimen/margin_grande"
                 android:background="@color/gris_oscuro" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titulo_mostrar"
+                android:layout_toRightOf="@+id/imagen_receta"
+                android:layout_marginLeft="@dimen/margin_medio"
+                android:layout_marginTop="@dimen/margin_peque"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/edit_image"
+                    android:layout_width="@dimen/margin_grande"
+                    android:layout_height="@dimen/margin_grande"
+                    android:background="@drawable/edit_image" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="@dimen/margin_grande"
+                    android:layout_height="@dimen/margin_grande"
+                    android:layout_marginTop="@dimen/margin_peque"
+                    android:background="@drawable/edit"
+                    android:onClick="editar" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="@dimen/margin_grande"
+                    android:layout_height="@dimen/margin_grande"
+                    android:layout_marginBottom="@dimen/margin_peque"
+                    android:layout_marginTop="@dimen/margin_peque"
+                    android:background="@drawable/video" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="@dimen/margin_grande"
+                    android:layout_height="@dimen/margin_grande"
+                    android:background="@drawable/trash"
+                    android:onClick="borrar" />
+
+            </LinearLayout>
 
             <RatingBar
                 android:id="@+id/ratingBar1"
@@ -129,8 +194,8 @@
                 android:textSize="@dimen/letra_peque" />
 
             <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
+                android:id="@+id/list"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/apto_mostrar"
                 android:layout_centerHorizontal="true"
@@ -140,22 +205,23 @@
                 android:textSize="@dimen/letra_peque" />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
+                android:id="@+id/video"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/button1"
-                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/list"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/margin_medio"
                 android:text="@string/video"
                 android:textColor="@color/lila"
                 android:textSize="@dimen/letra_peque" />
 
             <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
+                android:id="@+id/comentarios"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/button2"
-                android:layout_alignParentRight="true"
+                android:layout_below="@+id/video"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medio"
                 android:text="@string/comentarios"
                 android:textColor="@color/lila"
                 android:textSize="@dimen/letra_peque" />

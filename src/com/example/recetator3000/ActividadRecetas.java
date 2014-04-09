@@ -27,17 +27,17 @@ public class ActividadRecetas extends Activity {
 	}
 	
 	public void misRecetas(View view) {
-		Intent intent = new Intent(this, ActividadRecetas.class);
+		Intent intent = new Intent(this, ActividadMisRecetas.class);
 		startActivity(intent);
 	}
 	
 	public void favoritas(View view) {
-		Intent intent = new Intent(this, ActividadRecetas.class);
+		Intent intent = new Intent(this, ActividadRecetasFavoritas.class);
 		startActivity(intent);
 	}
 	
 	public void pendientes(View view) {
-		Intent intent = new Intent(this, ActividadRecetas.class);
+		Intent intent = new Intent(this, ActividadRecetasPendientes.class);
 		startActivity(intent);
 	}
 

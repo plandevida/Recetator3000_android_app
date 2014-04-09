@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/recetas_de_cocina"
-    tools:context=".ActividadNuevaReceta" >
+    tools:context=".ActividadEditarReceta" >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:textSize="@dimen/letra_peque" />
 
             <EditText
-                android:id="@+id/nombre_receta"
+                android:id="@+id/editar_nombre"
                 android:inputType="textCapSentences"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
                 android:textSize="@dimen/letra_peque" />
 
             <Spinner
-                android:id="@+id/tipo_plato"
+                android:id="@+id/editar_tipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/textView2"
@@ -65,7 +65,7 @@
                 android:textSize="@dimen/letra_peque" />
 
             <Spinner
-                android:id="@+id/ingrediente_principal"
+                android:id="@+id/editar_ingrediente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/textView3"
@@ -84,7 +84,7 @@
                 android:textSize="@dimen/letra_peque" />
 
             <Spinner
-                android:id="@+id/dificultad"
+                android:id="@+id/editar_dificultad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/textView4"
@@ -103,7 +103,7 @@
                 android:textSize="@dimen/letra_peque" />
 
             <EditText
-                android:id="@+id/tiempo"
+                android:id="@+id/editar_tiempo"
                 android:inputType="time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                 android:textSize="@dimen/letra_peque" />
 
             <EditText
-                android:id="@+id/calorias"
+                android:id="@+id/editar_calorias"
                 android:inputType="number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
             </EditText>
 
             <CheckBox
-                android:id="@+id/celiacos"
+                android:id="@+id/editar_celiacos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/textView6"
@@ -145,11 +145,11 @@
                 android:textSize="@dimen/letra_peque" />
 
             <CheckBox
-                android:id="@+id/lactosa"
+                android:id="@+id/editar_lactosa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/celiacos"
-                android:layout_below="@+id/celiacos"
+                android:layout_alignLeft="@+id/editar_celiacos"
+                android:layout_below="@+id/editar_celiacos"
                 android:text="@string/lactosa"
                 android:textSize="@dimen/letra_peque" />
 
@@ -157,14 +157,14 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/lactosa"
-                android:layout_below="@+id/lactosa"
+                android:layout_alignLeft="@+id/editar_lactosa"
+                android:layout_below="@+id/editar_lactosa"
                 android:layout_marginTop="@dimen/margin_medio"
                 android:text="@string/ingredientes"
                 android:textSize="@dimen/letra_peque" />
 
             <MultiAutoCompleteTextView
-                android:id="@+id/ingredientes"
+                android:id="@+id/editar_ingredientes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/textView7"
@@ -178,14 +178,14 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/ingredientes"
-                android:layout_below="@+id/ingredientes"
+                android:layout_alignLeft="@+id/editar_ingredientes"
+                android:layout_below="@+id/editar_ingredientes"
                 android:layout_marginTop="@dimen/margin_medio"
                 android:text="@string/modo"
                 android:textSize="@dimen/letra_peque" />
 
             <EditText
-                android:id="@+id/modo"
+                android:id="@+id/editar_modo"
                 android:inputType="textAutoCorrect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/modo"
+                android:layout_below="@+id/editar_modo"
                 android:layout_marginRight="@dimen/margin_peque"
                 android:layout_toLeftOf="@+id/button1"
                 android:background="@drawable/style_button"
@@ -211,7 +211,7 @@
                 android:id="@+id/button1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_below="@+id/modo"
+                android:layout_below="@+id/editar_modo"
                 android:layout_centerHorizontal="true" />
 
             <Button
@@ -219,7 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_below="@+id/modo"
+                android:layout_below="@+id/editar_modo"
                 android:layout_toRightOf="@+id/button1"
                 android:layout_marginLeft="@dimen/margin_peque"
                 android:background="@drawable/style_button"

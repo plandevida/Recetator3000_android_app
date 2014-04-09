@@ -11,7 +11,9 @@
     <dimen name="margin_medio">20dp</dimen>
     <dimen name="margin_peque">10dp</dimen>
     
-    <dimen name="imagen_receta">100dp</dimen>
+    <dimen name="imagen_receta">120dp</dimen>
+    <dimen name="icono_receta">40dp</dimen>
+    <dimen name="icono_boton">30dp</dimen>
     <dimen name="foto_perfil">130dp</dimen>
 
 </resources>

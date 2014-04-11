@@ -1,4 +1,4 @@
-package com.example.recetator3000;
+package com.recetatordeveloperteam.recetator3000;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -305,7 +305,7 @@ public class ActividadMostrarReceta extends Activity {
 			}
 		}
 		
-		// Detiene la traza de métodos que iniciamos en onCreate()
+		// Detiene la traza de m?todos que iniciamos en onCreate()
 		android.os.Debug.stopMethodTracing();
 	}
 }

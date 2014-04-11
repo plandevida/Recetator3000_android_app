@@ -1,4 +1,4 @@
-package com.example.recetator3000;
+package com.recetatordeveloperteam.recetator3000;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,27 +20,27 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 
-public class ActividadRecetasFavoritas extends Activity {
+public class ActividadRecetasPendientes extends Activity {
 
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_actividad_recetas_favoritas);
+		setContentView(R.layout.activity_actividad_recetas_pendientes);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		
-		Vector<Integer> codigosFavoritas = cargarFavoritas();
+
+		Vector<Integer> codigosPendientes = cargarPendientes();
 		Vector<String> nombresRecetas = new Vector<String>();
 		File[] archivos = this.getFilesDir().listFiles();
-		if (!codigosFavoritas.isEmpty()) {
+		if (!codigosPendientes.isEmpty()) {
 			// Se toman los nombres de las recetas para ponerlos en la lista de la actividad
 			for (int i=0; i<archivos.length; i++) {
 				if (archivos[i].getName().contains(".dat") && archivos[i].getName().contains("1")) {
 					int codigo = Integer.parseInt(archivos[i].getName().substring(0,
 							(archivos[i].getName().length()) - new String(".dat").length()));
-					if (codigosFavoritas.contains(codigo)) {
+					if (codigosPendientes.contains(codigo)) {
 						String nombre = null;
 						try {
 							BufferedReader entrada = new BufferedReader(new FileReader(archivos[i]));
@@ -57,8 +57,8 @@ public class ActividadRecetasFavoritas extends Activity {
 			// A partir de aqui se crean los hijos de la lista dinamicamente
 			int margin = (int) getResources().getDimension(R.dimen.margin_peque);
 			int dimenImagen = (int) getResources().getDimension(R.dimen.icono_receta);
-			LinearLayout recetasFavoritas = (LinearLayout) findViewById(R.id.mis_recetas);
-			// Si estaba en favoritos pero no ha encontrado el archivo, no aparecerá
+			LinearLayout recetasPendientes = (LinearLayout) findViewById(R.id.mis_recetas);
+			// Si estaba en favoritos pero no ha encontrado el archivo, no aparecer?
 			for (int i=0; i<nombresRecetas.size(); i++) {
 				LinearLayout fila = new LinearLayout(this);
 				LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
@@ -87,17 +87,17 @@ public class ActividadRecetasFavoritas extends Activity {
 				nombre.setText(nombresRecetas.elementAt(i));
 				fila.addView(nombre);
 
-				fila.setTag(codigosFavoritas.elementAt(i));
+				fila.setTag(codigosPendientes.elementAt(i));
 				fila.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View arg0) {
-						Intent intent = new Intent(ActividadRecetasFavoritas.this, ActividadMostrarReceta.class);
+						Intent intent = new Intent(ActividadRecetasPendientes.this, ActividadMostrarReceta.class);
 						intent.putExtra("Receta", Integer.parseInt((String.valueOf(arg0.getTag()))));
 						startActivity(intent);
 					}
 				});
 
-				recetasFavoritas.addView(fila);
+				recetasPendientes.addView(fila);
 			}
 		}
 	}
@@ -115,7 +115,7 @@ public class ActividadRecetasFavoritas extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.actividad_recetas_favoritas, menu);
+		getMenuInflater().inflate(R.menu.actividad_recetas_pendientes, menu);
 		return true;
 	}
 
@@ -136,20 +136,21 @@ public class ActividadRecetasFavoritas extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	private Vector<Integer> cargarFavoritas() {
-		Vector<Integer> favoritas = new Vector<Integer>();
-		File archivo = new File(this.getFilesDir(), "favoritas.dat");
+	private Vector<Integer> cargarPendientes() {
+		Vector<Integer> pendientes = new Vector<Integer>();
+		File archivo = new File(this.getFilesDir(), "pendientes.dat");
 		if (archivo.exists()) {
 			try {
 				BufferedReader entrada = new BufferedReader(new FileReader(archivo));
 				String linea;
 				while((linea=entrada.readLine()) != null)
-					favoritas.add(Integer.valueOf(linea));
+					pendientes.add(Integer.valueOf(linea));
 				entrada.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		return favoritas;
+		return pendientes;
 	}
+
 }

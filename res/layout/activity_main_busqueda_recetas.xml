@@ -3,4 +3,4 @@
     android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.recetator3000.ActividadBusquedaRecetas" />
+    tools:context="com.recetatordeveloperteam.recetator3000.ActividadBusquedaRecetas" />

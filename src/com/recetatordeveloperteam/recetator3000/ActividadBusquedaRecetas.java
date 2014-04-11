@@ -1,22 +1,22 @@
-package com.example.recetator3000;
+package com.recetatordeveloperteam.recetator3000;
 
 import java.util.Locale;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import com.recetatordeveloperteam.recetator3000.R;
+
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 public class ActividadBusquedaRecetas extends ActionBarActivity implements
 		ActionBar.TabListener {
@@ -47,7 +47,7 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
 		mSectionsPagerAdapter = new SectionsPagerAdapter(
-				getSupportFragmentManager());
+				getSupportFragmentManager(), actionBar);
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -56,8 +56,7 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 		// When swiping between different sections, select the corresponding
 		// tab. We can also use ActionBar.Tab#select() to do this if we have
 		// a reference to the Tab.
-		mViewPager
-				.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+		mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 					@Override
 					public void onPageSelected(int position) {
 						actionBar.setSelectedNavigationItem(position);
@@ -120,8 +119,12 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 	 */
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-		public SectionsPagerAdapter(FragmentManager fm) {
+		private ActionBar actionBar;
+		
+		public SectionsPagerAdapter(FragmentManager fm, ActionBar actionBar) {
 			super(fm);
+			
+			this.actionBar = actionBar;
 		}
 
 		@Override
@@ -129,13 +132,21 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a PlaceholderFragment (defined as a static inner class
 			// below).
-			return PlaceholderFragment.newInstance(position + 1);
+//			return PlaceholderFragment.newInstance(position + 1);
+			
+			switch (position) {
+			case 0:
+				return new BuscarRecetasFragment();
+
+			default:
+				return PlaceholderFragment.newInstance(position + 1);
+			}
 		}
 
 		@Override
 		public int getCount() {
 			// Show 3 total pages.
-			return 3;
+			return this.actionBar.getTabCount();
 		}
 
 		@Override
@@ -148,6 +159,19 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 				return getString(R.string.title_section2).toUpperCase(l);
 			}
 			return null;
+		}
+	}
+	
+	public static class BuscarRecetasFragment extends Fragment {
+		
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			
+			View view = inflater.inflate(R.layout.fragment_main_busqueda_recetas, container, false);
+			
+			
+			return view;
 		}
 	}
 
@@ -180,10 +204,10 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(
 					R.layout.fragment_main_busqueda_recetas, container, false);
-			TextView textView = (TextView) rootView
-					.findViewById(R.id.section_label);
-			textView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
+//			TextView textView = (TextView) rootView
+//					.findViewById(R.id.);
+//			textView.setText(Integer.toString(getArguments().getInt(
+//					ARG_SECTION_NUMBER)));
 			return rootView;
 		}
 	}

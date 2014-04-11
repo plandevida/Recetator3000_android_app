@@ -1,4 +1,4 @@
-package com.example.recetator3000;
+package com.recetatordeveloperteam.recetator3000;
 
 import android.os.Bundle;
 import android.app.Activity;

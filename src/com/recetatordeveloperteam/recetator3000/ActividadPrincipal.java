@@ -1,4 +1,4 @@
-package com.example.recetator3000;
+package com.recetatordeveloperteam.recetator3000;
 
 import android.app.Activity;
 import android.content.Intent;

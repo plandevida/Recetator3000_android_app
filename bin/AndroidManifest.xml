@@ -41,10 +41,10 @@
         <activity
             android:name="com.recetatordeveloperteam.recetator3000.ActividadBusquedaRecetas"
             android:label="@string/title_activity_actividad_busqueda_recetas" >
-<!--             android:parentActivityName="com.recetatordeveloperteam.recetator3000.ActividadPrincipal" > -->
-<!--             <meta-data -->
-<!--                 android:name="android.support.PARENT_ACTIVITY" -->
-<!--                 android:value="com.recetatordeveloperteam.recetator3000.ActividadPrincipal" /> -->
+            android:parentActivityName="com.recetatordeveloperteam.recetator3000.ActividadPrincipal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.recetatordeveloperteam.recetator3000.ActividadPrincipal" />
         </activity>
         <activity
             android:name="com.recetatordeveloperteam.recetator3000.ActividadNuevaReceta"

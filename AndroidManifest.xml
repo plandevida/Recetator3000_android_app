@@ -39,14 +39,6 @@
                 android:value=".ActividadPrincipal" />
         </activity>
         <activity
-            android:name=".ActividadBusquedaRecetas"
-            android:label="@string/title_activity_actividad_busqueda_recetas"
-            android:parentActivityName=".ActividadPrincipal" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActividadPrincipal" />
-        </activity>
-        <activity
             android:name=".ActividadNuevaReceta"
             android:label="@string/title_activity_actividad_nueva_receta"
             android:parentActivityName=".ActividadRecetas" >
@@ -57,6 +49,13 @@
         <activity
             android:name=".ActividadMostrarReceta"
             android:label="@string/title_activity_actividad_mostrar_receta" >
+        </activity>
+        <activity android:name=".ActividadBusquedaRecetas"
+            android:label="@string/title_activity_actividad_busqueda_recetas"
+            android:parentActivityName=".ActividadPrincipal"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadPrincipal" />
         </activity>
     </application>
 

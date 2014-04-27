@@ -20,3 +20,8 @@ Configurar la librería android-support-v7-appcompat
 3. Botón derecho sobre Recetator3000 -> Build Path -> Configure Build Path... -> Projects, pinchad en Add... y añadir el proyecto que acabamos de importar.
 
 Con esto debería compilar la vista de búsqueda de recetas
+
+DEPURACIÓN (sobre una máquina virtual para mayor rendimiento)
+-------------------------------------------------------------
+
+http://www.mat-d.com/site/developing-android-apps-with-android-x86-and-virtual-box/

@@ -3,5 +3,6 @@
     <string name="title_activity_actividad_busqueda_recetas">Búsqueda de recetas</string>
     <string name="title_section1">Búsqueda recetas</string>
     <string name="title_section2">Por Chef</string>
+    <string name="title_section3">Section3</string>
 
 </resources>

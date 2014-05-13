@@ -2,13 +2,14 @@ package com.recetatordeveloperteam.recetator3000;
 
 import java.util.Locale;
 
+import android.annotation.TargetApi;
+import android.app.ActionBar;
+import android.app.FragmentTransaction;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBar.TabListener;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class ActividadBusquedaRecetas extends ActionBarActivity implements
 		ActionBar.TabListener {
 
@@ -40,7 +42,7 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 		setContentView(R.layout.activity_actividad_busqueda_recetas);
 
 		// Set up the action bar.
-		final ActionBar actionBar = getSupportActionBar();
+		final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// Create the adapter that will return a fragment for each of the three
@@ -71,7 +73,7 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 			// this tab is selected.
 			actionBar.addTab(actionBar.newTab()
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
-					.setTabListener(this));
+					.setTabListener((TabListener) this));
 		}
 	}
 
@@ -119,12 +121,12 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 	 */
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-		public SectionsPagerAdapter(FragmentManager fm) {
-			super(fm);
+		public SectionsPagerAdapter(android.support.v4.app.FragmentManager fragmentManager) {
+			super(fragmentManager);
 		}
 
 		@Override
-		public Fragment getItem(int position) {
+		public android.support.v4.app.Fragment getItem(int position) {
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a PlaceholderFragment (defined as a static inner class
 			// below).
@@ -155,7 +157,7 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
-	public static class PlaceholderFragment extends Fragment {
+	public static class PlaceholderFragment extends android.support.v4.app.Fragment {
 		/**
 		 * The fragment argument representing the section number for this
 		 * fragment.
@@ -165,8 +167,8 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 		/**
 		 * Returns a new instance of this fragment for the given section number.
 		 */
-		public static PlaceholderFragment newInstance(int sectionNumber) {
-			PlaceholderFragment fragment = new PlaceholderFragment();
+		public static android.support.v4.app.Fragment newInstance(int sectionNumber) {
+			android.support.v4.app.Fragment fragment = new PlaceholderFragment();
 			Bundle args = new Bundle();
 			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 			fragment.setArguments(args);

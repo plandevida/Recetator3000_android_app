@@ -3,13 +3,12 @@ package com.recetatordeveloperteam.recetator3000;
 import java.util.Locale;
 
 import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar.TabListener;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -73,7 +72,7 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 			// this tab is selected.
 			actionBar.addTab(actionBar.newTab()
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
-					.setTabListener((TabListener) this));
+					.setTabListener(this));
 		}
 	}
 
@@ -98,21 +97,21 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 	}
 
 	@Override
-	public void onTabSelected(ActionBar.Tab tab,
-			FragmentTransaction fragmentTransaction) {
+	public void onTabSelected(Tab tab,
+			android.support.v4.app.FragmentTransaction fragmentTransaction) {
 		// When the given tab is selected, switch to the corresponding page in
 		// the ViewPager.
 		mViewPager.setCurrentItem(tab.getPosition());
 	}
 
 	@Override
-	public void onTabUnselected(ActionBar.Tab tab,
-			FragmentTransaction fragmentTransaction) {
+	public void onTabUnselected(Tab tab,
+			android.support.v4.app.FragmentTransaction fragmentTransaction) {
 	}
 
 	@Override
-	public void onTabReselected(ActionBar.Tab tab,
-			FragmentTransaction fragmentTransaction) {
+	public void onTabReselected(Tab tab,
+			android.support.v4.app.FragmentTransaction fragmentTransaction) {
 	}
 
 	/**
@@ -191,5 +190,4 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 			return rootView;
 		}
 	}
-
 }

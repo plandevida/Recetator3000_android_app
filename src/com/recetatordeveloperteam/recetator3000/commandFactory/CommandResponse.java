@@ -1,6 +1,6 @@
-package com.recetatordeveloperteam.recetator3000.comandos.commandFactory;
+package com.recetatordeveloperteam.recetator3000.commandFactory;
 
-import com.recetatordeveloperteam.recetator3000.comandos.IdEvent;
+import com.recetatordeveloperteam.recetator3000.commandFactory.eventos.IdEvent;
 
 public class CommandResponse {
 

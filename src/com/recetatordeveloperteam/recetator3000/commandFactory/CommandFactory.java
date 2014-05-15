@@ -1,8 +1,7 @@
-package com.recetatordeveloperteam.recetator3000.comandos.commandFactory;
+package com.recetatordeveloperteam.recetator3000.commandFactory;
 
-import com.recetatordeveloperteam.recetator3000.comandos.Command;
-import com.recetatordeveloperteam.recetator3000.comandos.IdEvent;
-import com.recetatordeveloperteam.recetator3000.comandos.commandFactory.imp.CommandFactoryImp;
+import com.recetatordeveloperteam.recetator3000.commandFactory.eventos.IdEvent;
+import com.recetatordeveloperteam.recetator3000.commandFactory.imp.CommandFactoryImp;
 
 public abstract class CommandFactory {
 
@@ -18,6 +17,6 @@ public abstract class CommandFactory {
 			commandFactoryInstance = new CommandFactoryImp();
 	}
 	
-	public abstract Command newCommand(IdEvent id);
+	public abstract CommandResponse sendPetition(IdEvent id, String[] data);
 
 }

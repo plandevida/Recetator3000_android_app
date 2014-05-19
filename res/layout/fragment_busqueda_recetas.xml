@@ -11,14 +11,14 @@
     tools:context="com.recetatordeveloperteam.recetator3000.framgmentos.BusquedaRecetasFragment" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recetas"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/listaRecetas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>

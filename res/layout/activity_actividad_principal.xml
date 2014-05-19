@@ -10,24 +10,12 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".ActividadPrincipal" >
-    
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/style_button"
-        android:textColor="@color/blanco"
-        android:textSize="@dimen/letra_grande"
-        android:text="@string/mi_perfil"
-        android:onClick="perfil" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_grande"
-        android:layout_marginTop="@dimen/margin_grande"
         android:background="@drawable/style_button"
         android:textColor="@color/blanco"
         android:textSize="@dimen/letra_grande"
@@ -35,7 +23,7 @@
         android:onClick="recetas" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/style_button"

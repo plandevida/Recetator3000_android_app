@@ -1,5 +1,6 @@
 <resources>
 
+    <!-- Pantalla mostrar receta -->
     <string name="title_activity_actividad_mostrar_receta">Receta</string>
     <string name="valoracion">Valoración</string>
     <string name="no_celiacos">No apto para celíacos</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-<!-- Pantalla nueva receta -->
+    <!-- Pantalla nueva receta -->
     <string name="title_activity_actividad_nueva_receta">Nueva Receta</string>
     <string name="nombre_receta">Nombre de la receta</string>
     <string name="tipo_plato">Tipo de plato</string>

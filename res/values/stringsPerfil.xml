@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <!-- Pantalla mi perfil -->
-    <string name="title_activity_actividad_mi_perfil">Perfil</string>
+    <!-- Pantalla perfil -->
+    <string name="title_activity_actividad_perfil">Perfil</string>
     <string name="nombre">Nombre</string>
 </resources>

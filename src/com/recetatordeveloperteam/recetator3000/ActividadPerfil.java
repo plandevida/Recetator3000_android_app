@@ -9,7 +9,7 @@ import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.os.Build;
 
-public class ActividadMiPerfil extends Activity {
+public class ActividadPerfil extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

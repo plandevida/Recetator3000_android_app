@@ -15,5 +15,9 @@
     <dimen name="icono_receta">40dp</dimen>
     <dimen name="icono_boton">30dp</dimen>
     <dimen name="foto_perfil">130dp</dimen>
+    
+    <dimen name="icono_item">25dp</dimen>
+    <dimen name="altura_item">45dp</dimen>
+    <dimen name="foto_panel">150dp</dimen>
 
 </resources>

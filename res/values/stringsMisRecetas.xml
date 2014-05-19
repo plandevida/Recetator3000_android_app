@@ -1,5 +1,14 @@
 <resources>
 
+    <!-- Pantalla recetas -->
+    <string name="nueva_receta">Nueva receta</string>
+    <string name="mis_recetas">Mis recetas</string>
+    <string name="recetas_favoritas">Recetas favoritas</string>
+    <string name="recetas_pendientes">Recetas pendientes</string>
+    
     <string name="title_activity_actividad_mis_recetas">Mis Recetas</string>
+    <string name="title_activity_actividad_editar_receta">Editar Receta</string>
+    <string name="title_activity_actividad_recetas_favoritas">Recetas Favoritas</string>
+    <string name="title_activity_actividad_recetas_pendientes">Recetas Pendientes</string>
 
 </resources>

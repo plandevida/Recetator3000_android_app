@@ -1,6 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:id="@+id/action_new"
+        android:icon="@drawable/add_recipe"
+        android:showAsAction="ifRoom"
+        android:title="@string/nueva_receta"/>
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never"

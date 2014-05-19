@@ -25,3 +25,8 @@ DEPURACIÓN (sobre una máquina virtual para mayor rendimiento)
 -------------------------------------------------------------
 
 http://www.mat-d.com/site/developing-android-apps-with-android-x86-and-virtual-box/
+
+Executing a HTTP POST Request with HttpClient
+---------------------------------------------
+
+http://www.androidsnippets.com/executing-a-http-post-request-with-httpclient

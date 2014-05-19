@@ -8,7 +8,7 @@ public class CommandFactoryImp extends CommandFactory {
 
 	@Override
 	public CommandResponse sendPetition(IdEvent id, String[] data) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 }

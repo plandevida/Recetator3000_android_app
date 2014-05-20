@@ -14,11 +14,11 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.recetatordeveloperteam.recetator3000.R;
 import com.recetatordeveloperteam.recetator3000.Receta;
@@ -47,12 +47,16 @@ public class BusquedaRecetasFragment extends Fragment {
 		tareaAsincrona = new TareaAsincronaAPI<Receta>(getActivity().getApplication(), "http://recetator-api.appspot.com/getrecetas", "recetas");
 		tareaAsincrona.registerListener(1, new OnLoadCompleteListener<List<Receta>>() {
 			@Override
-			public void onLoadComplete(Loader<List<Receta>> arg0, List<Receta> arg1) {
+			public void onLoadComplete(Loader<List<Receta>> arg0, List<Receta> recetas) {
 				
-				listaView.removeAllViews();
-				for ( Receta r : arg1) {
-					listaView.addView(new RecetaView(getActivity().getApplication(), r));
-				}
+//				listaView.removeAllViews();
+				
+				RecetaAdapter adapter = new RecetaAdapter(getActivity().getApplication(), recetas);
+				listaView.setAdapter(adapter);
+				
+//				for ( Receta r : recetas) {
+//					listaView.addView(new RecetaView(getActivity().getApplication(), r));
+//				}
 			}
 		});
 	}
@@ -67,38 +71,41 @@ public class BusquedaRecetasFragment extends Fragment {
 		
 	}
 	
-	public class AdapterRecetas extends AdapterView<RecetaAdapter> {
-
-		public AdapterRecetas(Context context) {
-			super(context);
-		}
-
-		@Override
-		public RecetaAdapter getAdapter() {
-			return getAdapter();
-		}
-
-		@Override
-		public View getSelectedView() {
-			return new View(getContext());
-		}
-
-		@Override
-		public void setAdapter(RecetaAdapter arg0) {
-			setAdapter(arg0);
-		}
-
-		@Override
-		public void setSelection(int arg0) {
-			
-		}
-	}
+//	public class AdapterRecetas extends AdapterView<RecetaAdapter> {
+//
+//		public AdapterRecetas(Context context) {
+//			super(context);
+//		}
+//
+//		@Override
+//		public RecetaAdapter getAdapter() {
+//			return getAdapter();
+//		}
+//
+//		@Override
+//		public View getSelectedView() {
+//			return new View(getContext());
+//		}
+//
+//		@Override
+//		public void setAdapter(RecetaAdapter arg0) {
+//			setAdapter(arg0);
+//		}
+//
+//		@Override
+//		public void setSelection(int arg0) {
+//			
+//		}
+//	}
 	
 	public class RecetaAdapter implements ListAdapter {
 
+		private Context context;
 		private List<Receta> lista;
 		
-		public RecetaAdapter(List<Receta> recetas ) {
+		public RecetaAdapter(Context contexto, List<Receta> recetas ) {
+			
+			context = contexto;
 			lista = recetas;
 		}
 		
@@ -124,7 +131,7 @@ public class BusquedaRecetasFragment extends Fragment {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			return null;
+			return new RecetaView(context, lista.get(position));
 		}
 
 		@Override
@@ -134,7 +141,7 @@ public class BusquedaRecetasFragment extends Fragment {
 
 		@Override
 		public boolean hasStableIds() {
-			return true;
+			return false;
 		}
 
 		@Override
@@ -161,18 +168,27 @@ public class BusquedaRecetasFragment extends Fragment {
 		}
 	}
 	
-	public class RecetaView extends View {
+	public class RecetaView extends LinearLayout {
 
+		private TextView nombre, dificultad;
+		
 		public RecetaView(Context context, Receta receta) {
 			super(context);
-		}
-	}
-	
-	public class LoadingView extends View {
-
-		public LoadingView(Context context) {
-			super(context);
 			
+			setOrientation(LinearLayout.VERTICAL);
+			
+			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+			params.setMargins(5, 3, 5, 0);
+
+			nombre = new TextView(context);
+			nombre.setText(receta.getNombre());
+			nombre.setTextSize(16f);
+			addView(nombre, params);
+
+			dificultad = new TextView(context);
+			dificultad.setText("Dificultad: " + receta.getDificultad());
+			addView(dificultad, params);
 		}
 	}
 }

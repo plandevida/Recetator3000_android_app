@@ -174,19 +174,25 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 			return fragment;
 		}
 
-		public PlaceholderFragment() {
-		}
+		public PlaceholderFragment() { }
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(
-					R.layout.fragment_actividad_busqueda_recetas, container,
-					false);
-			TextView textView = (TextView) rootView
-					.findViewById(R.id.section_label);
-			textView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
+			
+			View rootView;
+			switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
+			case 1:
+				rootView = inflater.inflate(R.layout.fragment_busqueda_recetas, container, false);
+				break;
+
+			default:
+				rootView = inflater.inflate(R.layout.fragment_actividad_busqueda_recetas, container, false);
+				TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+				textView.setText(Integer.toString(getArguments().getInt(
+				ARG_SECTION_NUMBER)));
+				break;
+			}
 			return rootView;
 		}
 	}

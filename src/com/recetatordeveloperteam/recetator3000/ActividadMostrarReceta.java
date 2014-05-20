@@ -7,6 +7,8 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Vector;
 
+import com.recetatordeveloperteam.recetator3000.entidades.Receta;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;

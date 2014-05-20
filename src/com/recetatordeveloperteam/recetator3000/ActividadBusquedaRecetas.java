@@ -185,7 +185,9 @@ public class ActividadBusquedaRecetas extends ActionBarActivity implements
 			case 1:
 				rootView = inflater.inflate(R.layout.fragment_busqueda_recetas, container, false);
 				break;
-
+				
+			case 2:
+				//TODO el fragment del chef
 			default:
 				rootView = inflater.inflate(R.layout.fragment_actividad_busqueda_recetas, container, false);
 				TextView textView = (TextView) rootView.findViewById(R.id.section_label);

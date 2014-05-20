@@ -1,6 +1,9 @@
-package com.recetatordeveloperteam.recetator3000;
+package com.recetatordeveloperteam.recetator3000.entidades;
 
-public class Receta {
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class Receta implements JSONParse<Receta> {
 	
 	private String nombre;
 	private String tipoPlato;
@@ -42,4 +45,9 @@ public class Receta {
 	public String getModo() { return modo; }
 	public int getPuntuacion() { return puntuacion; }
 
+	@Override
+	public Receta parseJSON(JSONObject jsonO) throws JSONException {
+		
+		return new Receta(jsonO.getString("nombre"), jsonO.getString("tipoplato"), jsonO.getString("ingredienteprincipal"), jsonO.getString("dificultad"), jsonO.getString("tiempo"), jsonO.getString("calorias"), jsonO.getBoolean("celiacos"), jsonO.getBoolean("lactosa"), jsonO.getString("ingredientes"), jsonO.getString("modo"), jsonO.getInt("puntuacion"));
+	}
 }

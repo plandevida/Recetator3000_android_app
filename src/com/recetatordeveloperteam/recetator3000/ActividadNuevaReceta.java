@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+import com.recetatordeveloperteam.recetator3000.entidades.Receta;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

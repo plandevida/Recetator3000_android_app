@@ -11,6 +11,7 @@ import android.support.v4.content.Loader;
 import android.support.v4.content.Loader.OnLoadCompleteListener;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,82 +22,58 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.recetatordeveloperteam.recetator3000.R;
-import com.recetatordeveloperteam.recetator3000.Receta;
 import com.recetatordeveloperteam.recetator3000.commandFactory.TareaAsincronaAPI;
+import com.recetatordeveloperteam.recetator3000.commandFactory.eventos.IdEvent;
+import com.recetatordeveloperteam.recetator3000.entidades.Receta;
 
 public class BusquedaRecetasFragment extends Fragment {
 	
 	private TareaAsincronaAPI<Receta> tareaAsincrona;
+	private ViewGroup root;
+	private ProgressBar progressBar;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		final ListView listaView = (ListView) getActivity().findViewById(R.id.listaRecetas);
-		//listaView.addView(new LoadingView(getActivity().getApplication()));
 		
-		ProgressBar progressBar = new ProgressBar(getActivity());
+		progressBar = new ProgressBar(getActivity());
 		LayoutParams params = new LayoutParams();
 		params.gravity = Gravity.CENTER;
 		params.height = LayoutParams.WRAP_CONTENT;
 		params.width = LayoutParams.WRAP_CONTENT;
         progressBar.setLayoutParams(params);
         progressBar.setIndeterminate(true);
-        listaView.setEmptyView(progressBar);
+//        listaView.setEmptyView(progressBar);
+        
+        root = (ViewGroup) getActivity().findViewById(android.R.id.content);
+        root.addView(progressBar);
 		
-		tareaAsincrona = new TareaAsincronaAPI<Receta>(getActivity().getApplication(), "http://recetator-api.appspot.com/getrecetas", "recetas");
+        
+        Log.println(Log.INFO, "RECETATOR", "CREANDO LA TAREA ASINCRONA");
+		tareaAsincrona = new TareaAsincronaAPI<Receta>(getActivity().getApplication(), IdEvent.GETALL_RECIPES, "http://recetator-api.appspot.com", "recetas");
 		tareaAsincrona.registerListener(1, new OnLoadCompleteListener<List<Receta>>() {
 			@Override
 			public void onLoadComplete(Loader<List<Receta>> arg0, List<Receta> recetas) {
 				
-//				listaView.removeAllViews();
+				root.removeView(progressBar);
 				
 				RecetaAdapter adapter = new RecetaAdapter(getActivity().getApplication(), recetas);
 				listaView.setAdapter(adapter);
-				
-//				for ( Receta r : recetas) {
-//					listaView.addView(new RecetaView(getActivity().getApplication(), r));
-//				}
 			}
 		});
 	}
 	
 	@Override
 	public void onInflate(Activity activity, AttributeSet attributes, Bundle savedInstanceState) {
-		
+		onCreate(savedInstanceState);
 	}
 	
 	@Override
 	public void onDestroy() {
 		
 	}
-	
-//	public class AdapterRecetas extends AdapterView<RecetaAdapter> {
-//
-//		public AdapterRecetas(Context context) {
-//			super(context);
-//		}
-//
-//		@Override
-//		public RecetaAdapter getAdapter() {
-//			return getAdapter();
-//		}
-//
-//		@Override
-//		public View getSelectedView() {
-//			return new View(getContext());
-//		}
-//
-//		@Override
-//		public void setAdapter(RecetaAdapter arg0) {
-//			setAdapter(arg0);
-//		}
-//
-//		@Override
-//		public void setSelection(int arg0) {
-//			
-//		}
-//	}
 	
 	public class RecetaAdapter implements ListAdapter {
 
